@@ -1,0 +1,211 @@
+\section*{Equity}
+
+\subsection*{Answering Road Map}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm,text centered, draw=black, fill=blue!20]
+\tikzstyle{process} = [rectangle, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, aspect=2, minimum width=3.5cm, minimum height=1.2cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+
+% Nodes
+\node (start) [startstop] {Step 1: Jurisdiction};
+\node (step2) [decision, below = of start] {Step 2: Equity Interest};
+\node (step3a) [process, below left=1.5cm of step2] {Step 3a: Equitable Principle};
+\node (step3b) [process, below right =1.5cm of step2] {Step 3b: Fiduciary Duty};
+\node (step4) [process, below =3cm of step2] {Step 4: Priority}
+\node (step5) [process, below=of step4] {Step 5: Defense};
+\node (step6) [startstop, below =of step5] {Step 6: Remedies};
+
+% Arrows
+\draw [arrow] (start) -- (step2);
+\draw [arrow] (step2) -- node[anchor=south east] {Property} (step3a);
+\draw [arrow] (step2) -- node[anchor=south west] {Relationship} (step3b);
+\draw [arrow] (step3a) --  (step4);
+\draw [arrow] (step3b) -- (step4);
+\draw [arrow] (step4) -- (step5);
+\draw [arrow] (step5) -- (step6);
+%\draw [arrow] (step3b.east) --++(7.20,0)-- (step4.south);
+
+% Optional connection (e.g., an alternate path or comparative analysis)
+%\draw [arrow, dashed] (step2) -- (step3b);
+%\draw [arrow, dashed] (step3b) |- (step4); % uncomment if 3b leads to 4
+
+\end{tikzpicture}
+
+\subsection{Equity Interest}
+Equity law is significantly concerned with providing relief for unconscionable conduct. Equity interests can arise from 
+\begin{itemize}
+    \item Major Trigger
+        \begin{itemize}
+            \item Unconscionable Conduct (Australian Competition and Consumer Commission v Berbatis Holdings Pty Ltd (No 2) (2000) 96 FCR 491 at 498)
+                \begin{itemize}
+                    \item Constructive Fraud --  Nocton v Lord Ashburton [1914] AC 932 at 954 (Haldane LJ).
+                        \begin{description}
+                            \item[Note:] Where there is some conscious wrongdoing or overreach but less that deceit, broadly called fraud in equity (and different to fraud in Common Law). 
+                            \item[Based on Fraud:] Duress(Johnson v Buttress (1936) 56 CLR 113 ), Fraud on Power(Vatcher v Paul [1915] AC 372 at 378)\footnote{The fraud happens when the power is exercised in a way that has a dominant or primary purpose of benefitting someone other than the intended object of the power.},Innocent misrepresentation(Derry v Peek (1889) 14 App Cas 337 at 374 )\footnote{a fraudulent misrepresentation as a false representation made knowingly, without belief in its truth, or recklessly being careless whether it is true or false}, Mistake(David Securities Pty Ltd v CBA (1992) 175 CLR 353 )\footnote{payments made under a mistake of fact AND payments under a mistake of law are recoverable}
+                        \end{description}
+                    \item Unconscionable dealing -- (Commercial Bank of Australia Ltd v Amadio (1983) 151 CLR 447 )
+                        \begin{description}
+                            \item[Note:] Where one party is at a special disadvantage (or disability) vis-à-vis another, and the stronger party exploits that disadvantage. 
+                            \item[disadvantage:]Financial need (Morlend Finance Corporation (Vic) Pty Ltd v Luke (1991) ASC 56-095). Lack of knowledge(Melverton v Commonwealth Development Bank of Australia (1989)
+ASC 55-921), inadequacy of consideration(Blomley v Ryan (1956) 99 CLR 362), emotional dependency(Louth v Diprose (1992) 175 CLR 621)
+                        \end{description}
+                    \item Estoppel(Austodel Pty Ltd v Franklins Selfserve Stores Pty Ltd (1989) 16 NSWLR 582 at 612)
+                        \begin{description}
+                            \item[Note:] Where equity is preventing an unconscionable assertion of strict legal rights. 
+                            \item[Forms:] deed, judgement, proprietary promissory
+                                \begin{description}
+                                    \item[Proprietary] Proprietary estoppel prevents an owner of an interest in property from asserting his or her rights against another party whom he or she has allowed or encouraged to deal with that interest, or act in relation to that property, as if they had rights in it. It includes estoppel by encouragement and estoppel by acquiescence
+                                    \item[Promissory] the courts will not allow an unconscionable departure by one party from an assumption adopted by another party as the basis for some act, omission, course of conduct or relationship, if departure from the assumption would cause damage to the party relying on the assumption. (Walton Stores v Maher (1988) 164 CLR 387.)
+                                \end{description}
+                            \item[Elements]
+                                \begin{itemize}
+                                    \item Representation(Legione v Hateley (1983) 152 CLR 406)
+                                    \item sufficient link(Je Maintiendrai Pty Ltd v Quaglia (1980) 26 SASR 101)
+                                    \item relied (Austotel Pty Ltd v Franklins Selfserve Pty Ltd (1989) 16 NSWLR 582)
+                                    \item unconscionable(Walton Stores v Maher (1988) 164 CLR 387.)
+                                \end{itemize}
+                        \end{description}
+                \end{itemize}
+        \end{itemize}
+    \item Other triggers
+        \begin{itemize}
+            \item Implication of Law --where the equitable interest reflects the nature of the transaction in issue. 
+                \begin{itemize}
+                    \item Resulting Trust
+                    \item Equitable Lien (Hewett v Court (1983) 149 CLR 639 at 668)
+                    \item Equitable Lease (Chan v Cresdon Pty Ltd (1989) 168 CLR 242 )
+                \end{itemize}
+            \item Operation of the Law -- in circumstances that justify the court decreeing a person’s entitlement to an equitable interest in property. 
+                \begin{itemize}
+                    \item Fiduciary Duties(Petroleum NL v Kennedy (1999) 48 NSWLR 1, 46-47 (Beach J)) -- breaches can generate equitable interests
+                        \begin{itemize}
+                            \item Presumed
+                                \begin{itemize}
+                                    \item Trustee -- Beneficiary(Keech v Sandford (1726) 25 ER 223)
+                                    \item Director --Company(R v Byrnes (1995) 130 ALR 529 at 540;Industrial Development Consultants v Cooley [1972] 2 All ER 162)
+                                    \item Lawyer -- Client(Boardman v Phipps [1967] 2 AC 46)
+                                    \item Partner --Partner(Chan v Zacharia (1984) 154 CLR 178 )
+                                    \item Agent - Principal(McKenzie v McDonald [1927] VLR 134)
+                                \end{itemize}
+
+                            \item Othger
+                                \begin{itemize}
+                                    \item Financial advisers -- client(Daly v Sydney Stock Exchange (1986) 160 CLR 371)
+                                    \item Commercial relationship generally(Hospital Products v USSC (1984) 156 CLR 41)
+                                    \item joint venture(UDC v Brian Pty Ltd (1985) 157 CLR 1)
+                                    \item Banks and customers(CBA v Smith (1991) 102 ALR 453)
+                                    \item Employer and employees(Green & Clara Pty Ltd v Bestobell Industries Pty Ltd [1982] WAR 1)
+                                    \item Doctors and patients (Breen v Williams (1996) 186 CLR 71)
+                                \end{itemize}
+                        \end{itemize}
+                    \item Constructive Trust
+                    \item Mutual Will
+                    \item contracts for the disposition of land (Chang v Registrar of Titles (1976) 137 CLR 177)
+                \end{itemize}
+            \item By intention
+                \begin{itemize}
+                    \item Obligation (DKLR Holding Co (No 2) Pty Ltd v Commissioner of Stamp Duties [1980] 1 NSWLR 510 at 518. Hope ) -- 
+                    \item Contributions to Property (Giumelli v Giumelli (1999) 196 CLR 101 at 112)
+                    \item Instrument of security (Carreras Rothmans Ltd v Freeman Mathews Treasure Ltd [1985] Ch 207 at 227 )
+                    \item Equitable Assignments
+                        \begin{description}
+                            \item[Definition:]An assignment relates to the transfer of rights and liabilities. And a transfer can be said to occur when one person (the assignor) parts with something in circumstances where the recipient of that thing (the assignee) receives the same thing previously held by the transferor. 
+
+                            \item[Choses in action]All personal rights of property which can only be claimed or enforced by action, and not by taking physical possession(Torkington v Magee [1902] 2 KB 427 at 430)
+                            \item[Statute:]Property Law Act 1974 (Qld) s 199(1) 
+                        \end{description}
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+
+\subsection*{Priority}
+When there is competition between two or more parties asserting rights or interests in the same subject matter in circumstances in which the various claims are incompatible, the question of priority arises.
+\subsubsection*{Competing Factors}
+Generally priority is accorded to the first in time (in terms of when it was created) (Latec Investments v Hotel Terrigal (1965) 113 CLR 265 at 276)
+\begin{itemize}
+    \item Estoppel(Heid v Reliance Finance Corp (1983) 154 CLR 326)\footnote{basically, you can’t go back on what you let others believe if it caused them harm.}
+    \item Failure to caveat ( J \& H Just (Holdings) Pty Ltd v Bank of New South
+Wales (1971) 125 CLR 546)\footnote{}
+    \item Accepted conveyance practice(IAC (Finance) Pty Ltd v Courtenay (1963) 110 CLR 550)\footnote{Conduct of the holder of the earlier equitable interest
+may not operate to postpone that interest to a later
+interest if it accords with established conveyance
+practice}
+    \item Notice(Platzer v Commonwealth Bank of Australia [1997] 1 Qd R 266)\footnote{If the holder of the later equitable interest has notice,
+actual or constructive, of the earlier equity, his or
+her claim to priority is ordinarily defeated at the
+threshold}
+    \item Mere equities(Double Bay Newspapers Pty Ltd v AW Holdings Pty Ltd (1996) 42 NSWLR 409)\footnote{A prior mere equity (a mere personal right to seek relief in
+equity) will be postponed to a later equitable interest, unless
+the holder of the later equitable interest had notice of the
+earlier mere equity}
+\end{itemize}
+\susubsection*{}
+\begin{itemize}
+    \item Bona fide purchaser for value of a legal estate without notice of a prior
+equitable interest takes free of that equitable interest.
+    \item Where the purchaser has notice of the equitable interest, his or her
+conscience is affected and he or she will take subject to that equitable
+interest( Pilcher v Rawlins (1872) LR 7 Ch 259)
+    \item A transferee of land under a Torrens Title registration system is not
+affected by actual or constructive notice of any unregistered interests
+unless he or she is guilty of fraud (Land Titles Act 1994 (Qld) s 184)
+\end{itemize}
+
+\susubsection*{Legal and subsequent equitable interests}
+The general rule is that the holder of the earlier legal estate will have priority,
+unless:
+\begin{enumerate}
+    \item The earlier legal interest holder has been a party to the fraud that leads to the
+creation of the later equitable interest
+    \item The holder of the legal estate fails to obtain or retain possession of title documents,
+enabling another person holding themselves out as the legal owner of the property
+    \item The legal interest holder has entrusted the title documents to an agent for the limited
+purpose of raising money and the agent acts in excess of his or her authority
+    \item The holder of the legal interest, although not parting with the title documents, gives
+another person a document that confers upon that person an equitable interest or a
+right to acquire a legal interest
+\end{enumerate}
+
+
+\subsection*{Defense}
+\begin{itemize}
+    \item Consent
+    \item Delay
+    \item Bad Faith
+\end{itemize}
+\subsection*{Remedies}
+Not punishing and judge has full discretion. 
+\begin{itemize}
+    \item Declaration (Civil Proceeding Act 2011 (Qld) s10)
+    \item Monetary remedies
+        \begin{itemize}
+            \item Equitable compensation -- restore (Nocton v Lord Ashburton [1914] AC 932, 953)
+                \begin{description}
+                    \item[Connection:] Maguire v Makaronis (1997) 188 CLR 449, 473
+                    \item[Quantum:]Brickenden Principle ASIC v Adler
+                \end{description}
+            \item Equitable damages -- small injury (Shelfer v City of London Electricity Lighting Company [1895] 1 Ch
+287 (Smith LJ))
+            \item Account of profits -- can only choose one (Dart Industries Inc v Decor Corp Pty Ltd (1993) 179 CLR 101)
+        \end{itemize}
+    \item Specific Performance
+    \item Injunctions
+        \begin{itemize}
+            \item Quia timet(to restrain apprehended wrongs in contrast to other injunctions that restrain actual wrongs that have occurred)
+                \begin{itemize}
+                    \item cause imminent and substantial damages (Commonwealth v Progress Advertising and Press Agency Co Pty Ltd (1910)
+10 CLR 457 at 461)
+                    \item Causal connection(PTY Homes Ltd v Shand [1968] NZLR 105 at 112
+)
+                \end{itemize}
+            \item Freeze order -- Mareva order(Mareva
+Compania Naviera SA v International Bulkcarriers SA [1975] 2 Lloyd’s
+Rep 509) 
+            \item Preserve order -- Anton Piller orders(Anton Piller KG v Manufacturing Processes Ltd [1976] 1
+Ch 55)
+        \end{itemize}
+\end{itemize}
